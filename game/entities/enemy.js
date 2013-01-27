@@ -8,7 +8,7 @@ define(['crafty', 'game/entities/_base'], function(Crafty, BaseEntity) {
     },
     initialize: function() {
       var model = this;
-      var entity = Crafty.e('player, DOM, 2D, Multiway, dummylks')
+      var entity = Crafty.e('enemy, DOM, 2D, Multiway, enemyrun')
       entity.attr({
         x: model.get('x') - model.get('w'),
         y: model.get('y') - model.get('h'),

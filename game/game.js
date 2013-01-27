@@ -16,12 +16,19 @@ require.config({
 });
 
 require(["lodash", "jquery", "crafty", "backbone"], function(_, $, Crafty, Backbone) {
+
+  // Initialize a top-level game object.
+  var game = {
+    scenes: new Backbone.Collection()
+  }
+
   $(document).ready(function(){
     Crafty.init(600, 420);
     Crafty.background('rgb(0,0,0)');
 
-    require(['game/scenes/level1'], function(){
-      Crafty.scene('level1');
+    require(['crafty', 'game/scenes/level01'], function(Crafty, Level01) {
+      game.scenes.add(new Level01());
+      game.scenes.first().play();
     });
 
   });
