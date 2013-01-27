@@ -7,10 +7,10 @@ define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, 
           "tile": 64,
           "tileh": 64,
           "elements": {
-            "dummylkw": [0, 0],
-            "dummylks": [1, 0],
-            "dummylkn": [2, 0],
-            "dummylke": [3, 0],
+            "west": [0, 0],
+            "south": [1, 0],
+            "north": [2, 0],
+            "east": [3, 0],
           }
         }
       }
