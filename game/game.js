@@ -25,8 +25,7 @@ require(["lodash", "jquery", "crafty", "backbone"], function(_, $, Crafty, Backb
   // Initialize a top-level game object.
   var game = {
     // Handy collection methods available for game scenes :)
-    scenes: new Backbone.Collection(),
-    sprites: new Backbone.Collection()
+    scenes: new Backbone.Collection()
   }
 
   // I'm pretty sure this is not needed, but anyhow, here it is.
