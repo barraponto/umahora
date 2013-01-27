@@ -11,7 +11,7 @@ define([
       // Center player by default.
       x: Crafty.viewport.width / 2,
       y: Crafty.viewport.height / 2,
-      w: 64,
+      w: 32,
       h: 64
     },
     initialize: function() {

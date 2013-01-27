@@ -9,7 +9,7 @@ define([
       images: {
         "idle": {
           "file": "game/assets/images/Player.png",
-          "tile": 64,
+          "tile": 32,
           "tileh": 64,
           "elements": {
             "west": [0, 0],
