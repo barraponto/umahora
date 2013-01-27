@@ -3,7 +3,7 @@ define([
   'game/entities/_base',
   'game/sprites/player'
 ], function(Crafty, BaseEntity, PlayerSprite) {
-  Player = BaseEntity.extend({
+  var Player = BaseEntity.extend({
     defaults: {
       sprite: new PlayerSprite(),
       // Center player by default.

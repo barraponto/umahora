@@ -6,7 +6,7 @@ define([
   'game/entities/player',
   'game/entities/enemy'
 ], function(Crafty, _, BaseScene, Player, Enemy) {
-  Level01 = BaseScene.extend({
+  var Level01 = BaseScene.extend({
     defaults: {
       // This will be used later to name the scene and load it.
       name: 'level01'

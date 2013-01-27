@@ -1,6 +1,6 @@
 // Nothing to see here, moving on.
 define(['backbone'], function(Backbone) {
-  BaseEntity = Backbone.Model.extend({
+  var BaseEntity = Backbone.Model.extend({
     defaults: {
       entity:  null
     },

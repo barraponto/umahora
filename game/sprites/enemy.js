@@ -1,5 +1,5 @@
 define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, BaseSprite) {
-  EnemySprite = BaseSprite.extend({
+  var EnemySprite = BaseSprite.extend({
     defaults: {
       images: {
         "misc": {

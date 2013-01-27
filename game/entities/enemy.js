@@ -3,7 +3,7 @@ define([
   'game/entities/_base',
   "game/sprites/enemy"
 ], function(Crafty, BaseEntity) {
-  Enemy = BaseEntity.extend({
+  var Enemy = BaseEntity.extend({
     defaults: {
       sprite: new EnemySprite(),
       // Yay for random generated enemies.
