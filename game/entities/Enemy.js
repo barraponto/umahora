@@ -1,8 +1,9 @@
 define([
-  'crafty',
-  'game/entities/_base',
-  "game/spriters/Enemy"
-], function(Crafty, BaseEntity, EnemySpriter) {
+       'crafty',
+       'lodash',
+       'game/entities/_base',
+       "game/spriters/Enemy"
+], function(Crafty, _, BaseEntity, EnemySpriter) {
   var Enemy = BaseEntity.extend({
     defaults: {
       spriter: new EnemySpriter(),
@@ -17,15 +18,39 @@ define([
       // Calling the spriter.create() with no arg will load the default
       // currentSprite attribute from the sprite
       model.get('spriter').create();
-      var entity = Crafty.e('Enemy, DOM, 2D, Multiway, enemyrun');
-      entity.attr({
+      var entity = Crafty.e('Enemy, backboner, DOM, 2D, Multiway, enemyrun')
+      .backboner(model)
+      .attr({
         x: model.get('x') - model.get('w'),
         y: model.get('y') - model.get('h'),
         w: model.get('w'),
         h: model.get('h')
-      });
+      }).bind('EnterFrame', model.stayAlert);
 
       model.set({'entity': entity});
+    },
+    searchArea: function(area) {
+      var entity = this.get('entity');
+      return Crafty.map.search({
+        _x: entity.pos()._x - area/2,
+        _y: entity.pos()._y - area/2,
+        _w: area,
+        _h: area,
+      }, true);
+    },
+    stayAlert: function() {
+      var entity = this,
+      model = entity.bb_getModel();
+      if ((Crafty.frame() % 9) === 0) {
+        _.some(model.searchArea(300), function(e,i,a) {
+          if (e.has('Player')) {
+            // Do something!
+            console.log(e)
+            entity.unbind('EnterFrame', model.stayAlert);
+            return true;
+          }
+        });
+      }
     }
   });
 
