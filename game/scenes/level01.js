@@ -1,10 +1,11 @@
 // Load everything this first scene will require.
 define([
   'crafty',
+  'lodash',
   'game/scenes/_base',
   'game/entities/player',
   'game/entities/enemy'
-], function(Crafty, BaseScene, Player, Enemy) {
+], function(Crafty, _, BaseScene, Player, Enemy) {
   Level01 = BaseScene.extend({
     defaults: {
       // This will be used later to name the scene and load it.
