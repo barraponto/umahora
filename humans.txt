@@ -4,6 +4,7 @@
 # TEAM
 
     <name> -- <role> -- <twitter>
+    Capi Etheriel -- ideas, web development - @barraponto
 
 # THANKS
 
@@ -13,3 +14,6 @@
 
     HTML5, CSS3
     jQuery, Modernizr
+    CraftyJS, Backbone
+    Lodash, RequireJS
+    This page has THREE loaders, think about it.
