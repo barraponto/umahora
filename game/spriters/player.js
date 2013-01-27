@@ -1,6 +1,7 @@
 define(['crafty', 'backbone', 'game/spriters/_base'], function(Crafty, Backbone, BaseSpriter) {
   var PlayerSpriter = BaseSpriter.extend({
     defaults: {
+      currentSprite: "idle",
       images: {
         "idle": {
           "file": "game/assets/images/dummy.png",

@@ -7,7 +7,9 @@ define(['crafty', 'lodash', 'backbone'], function(Crafty, _, Backbone) {
     initialize: function() {
     },
     create: function(key) {
+      key = (key == undefined) ? this.get('currentSprite') : key;
       if (key != undefined) {
+        this.set('currentSprite', key);
         element = this.get('images')[key];
         if (element['tileh'] == undefined) {
           Crafty.sprite(element['tile'], element['file'], element['elements']);
@@ -15,12 +17,7 @@ define(['crafty', 'lodash', 'backbone'], function(Crafty, _, Backbone) {
           Crafty.sprite(element['tile'], element['tileh'], element['file'], element['elements']);
         }
       } else {
-        _.each(this.get('images'), function(element, k) {
-          if(element['tileh'] == undefined)
-            Crafty.sprite(element['tile'], element['file'], element['elements']);
-          else
-            Crafty.sprite(element['tile'], element['tileh'], element['file'], element['elements']);
-        });
+        console.log('ERROR: no key passed to Spriter.create().');
       }
     },
     getPaths: function(){
