@@ -6,7 +6,7 @@ define(['backbone'], function(Backbone) {
     initialize: function () {
     },
     getEntity: function() {
-      return this.getEntity();
+      return this.get('entity');
     },
     remove: function() {
       var entity = this.getEntity();
