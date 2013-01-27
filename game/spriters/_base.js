@@ -1,5 +1,5 @@
 define(['crafty', 'lodash', 'backbone'], function(Crafty, _, Backbone) {
-  var BaseSprite = Backbone.Model.extend({
+  var BaseSpriter = Backbone.Model.extend({
     defaults: {
       images: {
       }
@@ -32,5 +32,5 @@ define(['crafty', 'lodash', 'backbone'], function(Crafty, _, Backbone) {
       return array;
     }
   });
-  return BaseSprite;
+  return BaseSpriter;
 });

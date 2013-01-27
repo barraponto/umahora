@@ -1,11 +1,11 @@
 define([
   'crafty',
   'game/entities/_base',
-  "game/sprites/enemy"
-], function(Crafty, BaseEntity, EnemySprite) {
+  "game/spriters/enemy"
+], function(Crafty, BaseEntity, EnemySpriter) {
   var Enemy = BaseEntity.extend({
     defaults: {
-      sprite: new EnemySprite(),
+      spriter: new EnemySpriter(),
       // Yay for random generated enemies.
       x: Math.round(Crafty.viewport.width * Math.random()),
       y: Math.round(Crafty.viewport.height * Math.random()),
@@ -14,7 +14,7 @@ define([
     },
     initialize: function() {
       var model = this;
-      model.get('sprite').create('misc');
+      model.get('spriter').create('misc');
       var entity = Crafty.e('enemy, DOM, 2D, Multiway, enemyrun');
       entity.attr({
         x: model.get('x') - model.get('w'),

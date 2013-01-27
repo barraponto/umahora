@@ -1,5 +1,5 @@
-define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, BaseSprite) {
-  var EnemySprite = BaseSprite.extend({
+define(['crafty', 'backbone', 'game/spriters/_base'], function(Crafty, Backbone, BaseSpriter) {
+  var EnemySpriter = BaseSpriter.extend({
     defaults: {
       images: {
         "misc": {
@@ -18,5 +18,5 @@ define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, 
       }
     },
   });
-  return EnemySprite;
+  return EnemySpriter;
 });

@@ -1,5 +1,5 @@
-define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, BaseSprite) {
-  var PlayerSprite = BaseSprite.extend({
+define(['crafty', 'backbone', 'game/spriters/_base'], function(Crafty, Backbone, BaseSpriter) {
+  var PlayerSpriter = BaseSpriter.extend({
     defaults: {
       images: {
         "idle": {
@@ -16,5 +16,5 @@ define(['crafty', 'backbone', 'game/sprites/_base'], function(Crafty, Backbone, 
       }
     },
   });
-  return PlayerSprite;
+  return PlayerSpriter;
 });
