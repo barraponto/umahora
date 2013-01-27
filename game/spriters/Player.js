@@ -1,10 +1,14 @@
-define(['crafty', 'backbone', 'game/spriters/_base'], function(Crafty, Backbone, BaseSpriter) {
+define([
+       'crafty',
+       'backbone',
+       'game/spriters/_base'
+], function(Crafty, Backbone, BaseSpriter) {
   var PlayerSpriter = BaseSpriter.extend({
     defaults: {
       currentSprite: "idle",
       images: {
         "idle": {
-          "file": "game/assets/images/dummy.png",
+          "file": "game/assets/images/Player.png",
           "tile": 64,
           "tileh": 64,
           "elements": {

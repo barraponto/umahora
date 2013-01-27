@@ -1,9 +1,14 @@
-define(['crafty', 'backbone', 'game/spriters/_base'], function(Crafty, Backbone, BaseSpriter) {
+define([
+       'crafty',
+       'backbone',
+       'game/spriters/_base'
+], function(Crafty, Backbone, BaseSpriter) {
   var EnemySpriter = BaseSpriter.extend({
     defaults: {
+      currentSprite: 'misc',
       images: {
         "misc": {
-          "file": "game/assets/images/enemy.png",
+          "file": "game/assets/images/Enemy.png",
           "tile": 64,
           "tileh": 64,
           "elements": {

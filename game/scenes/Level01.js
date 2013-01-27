@@ -3,8 +3,8 @@ define([
   'crafty',
   'lodash',
   'game/scenes/_base',
-  'game/entities/player',
-  'game/entities/enemy'
+  'game/entities/Player',
+  'game/entities/Enemy'
 ], function(Crafty, _, BaseScene, Player, Enemy) {
   var Level01 = BaseScene.extend({
     defaults: {

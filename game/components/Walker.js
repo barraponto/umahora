@@ -1,4 +1,7 @@
-define(['crafty', 'game/components/backboner'], function(Crafty) {
+define([
+       'crafty',
+       'game/components/Backboner'
+], function(Crafty) {
   Crafty.c('walker', {
     init: function(){
       this.requires('backboner');

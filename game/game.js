@@ -35,7 +35,7 @@ require(["lodash", "jquery", "crafty", "backbone"], function(_, $, Crafty, Backb
     Crafty.background('rgb(0,0,0)');
 
     // Load the first scene.
-    require(['game/scenes/level01'], function(Level01) {
+    require(['game/scenes/Level01'], function(Level01) {
       // Save it to the game object scene collection.
       game.scenes.add(new Level01());
       // And play it.
