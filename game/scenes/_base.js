@@ -1,3 +1,4 @@
+// Nothing to see here, moving on.
 define(['backbone'], function(Backbone) {
   BaseScene = Backbone.Model.extend({
     defaults: {

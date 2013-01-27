@@ -1,33 +1,24 @@
+// Load everything this first scene will require.
 define([
   'crafty',
   'game/scenes/_base',
   'game/entities/player',
   'game/entities/enemy'
-], function(Crafty, BaseEntity) {
+], function(Crafty, BaseScene, Player, Enemy) {
   Level01 = BaseScene.extend({
     defaults: {
+      // This will be used later to name the scene and load it.
       name: 'level01'
     },
     initialize: function() {
+      // I'm just wary of calling _.bindAll(), so I'm aliasing this to a variable.
       var model = this;
       var scene = Crafty.scene(model.get('name'), function(){
-        Crafty.sprite(64, 'game/assets/images/enemy.png', {
-          enemyrun: [0, 0],
-          enemyang: [1, 0],
-          enemywlk: [2, 0],
-          enemylke: [3, 0],
-          enemylks: [4, 0],
-          enemylkw: [4, 0],
-        });
-        Crafty.sprite(64, 'game/assets/images/dummy.png', {
-          dummylkw: [0, 0],
-          dummylks: [1, 0],
-          dummylkn: [2, 0],
-          dummylke: [3, 0],
-        });
+        // Save references to these entities, they might be handy later.
         model.set({'player': new Player()});
         model.set({'enemy': new Enemy()});
       });
+      // This is mostly to call scene.uninit() on when BaseScene.destroy() is triggered.
       model.set({'scene': scene});
     },
     play: function() {
