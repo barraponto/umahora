@@ -5,10 +5,10 @@ require.config({
   // Both jQuery and Crafty hardcode the exported module name.
   // The other vendor libraries would get jealous, so I aliased them too.
   paths: {
-    "jquery": "js/vendor/jquery-1.9.0",
-    "crafty": "js/vendor/crafty-0.5.4-c177c5e",
-    "lodash": "js/vendor/lodash-1.0.0-rc3",
-    "backbone": "js/vendor/backbone-0.9.10"
+    "jquery": "js/vendor/jquery-1.9.0.min",
+    "crafty": "js/vendor/crafty-0.5.4-c177c5e.min",
+    "lodash": "js/vendor/lodash-1.0.0-rc3.min",
+    "backbone": "js/vendor/backbone-0.9.10.min"
   },
   // Backbone still requires a shim, so...
   shim: {
