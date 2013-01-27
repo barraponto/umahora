@@ -2,7 +2,7 @@ define([
   'crafty',
   'game/entities/_base',
   "game/sprites/enemy"
-], function(Crafty, BaseEntity) {
+], function(Crafty, BaseEntity, EnemySprite) {
   var Enemy = BaseEntity.extend({
     defaults: {
       sprite: new EnemySprite(),
