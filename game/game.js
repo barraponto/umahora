@@ -23,7 +23,7 @@ require.config({
 require(["lodash", "jquery", "crafty", "backbone"], function(_, $, Crafty, Backbone) {
 
   // Initialize a top-level game object.
-  var game = {
+  window.game = {
     // Handy collection methods available for game scenes :)
     scenes: new Backbone.Collection()
   }
