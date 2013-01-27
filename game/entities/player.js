@@ -1,7 +1,7 @@
 define([
-  'crafty',
-  'game/entities/_base',
-  'game/sprites/player'
+       'crafty',
+       'game/entities/_base',
+       'game/sprites/player'
 ], function(Crafty, BaseEntity, PlayerSprite) {
   var Player = BaseEntity.extend({
     defaults: {
@@ -25,9 +25,31 @@ define([
         h: model.get('h')
       })
       // first arg is speed in pixels, second is dict of keys and directions in degrees (0 is right).
-      .multiway(5, {W: -90, A: 180, S: 90, D: 0});
+      .multiway(5, {W: -90, A: 180, S: 90, D: 0})
+      .bind('NewDirection', _.bind(model.newDirection, model));
 
       model.set({'entity': entity});
+    },
+    idlylook: function(idlesprite) {
+      if (!this.get('entity').has(idlesprite)) {
+        Object.keys(this.get('sprite').get('images')['idle']['elements']).some(function(e, i, a){
+          if (this.has(e)) {
+            this.toggleComponent(e, idlesprite);
+            return true;
+          }
+        }, this.get('entity'));
+      }
+    },
+    newDirection: function(direction) {
+      if (direction.x > 0) {
+        this.idlylook('dummylke');
+      } else if (direction.x < 0) {
+        this.idlylook('dummylkw');
+      } else if (direction.y > 0) {
+        this.idlylook('dummylks');
+      } else if (direction.y < 0) {
+        this.idlylook('dummylkn');
+      }
     }
   });
 
