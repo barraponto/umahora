@@ -19,7 +19,7 @@ define([
       // Calling the spriter.create() with no arg will initialize the sprite
       // component for the WallSpriter.get('currentSprite ') attribute.
       model.get('spriter').create();
-      var entity = Crafty.e('Wall, DOM, 2D');
+      var entity = Crafty.e('Wall, DOM, 2D, solid');
       entity.addComponent(model.get('tile'))
       .attr({
         x: model.get('x'),
