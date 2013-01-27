@@ -31,9 +31,13 @@ define([
       // first arg is speed in pixels, second is dict of keys and directions in degrees (0 is right).
       .multiway(5, {W: -90, A: 180, S: 90, D: 0})
       .bind('Moved', function(from) {
+        // Don't walk if it hits something solid.
         if (this.hit('solid')) {
           this.attr({x: from.x, y: from.y});
         }
+      }).onHit('Enemy', function() {
+        // Don't walk into the enemy, or else...
+          this.destroy();
       });
 
       model.set({'entity': entity});
