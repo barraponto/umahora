@@ -2,10 +2,12 @@
 define([
   'crafty',
   'lodash',
+  'backbone',
   'game/scenes/_base',
   'game/entities/Player',
-  'game/entities/Enemy'
-], function(Crafty, _, BaseScene, Player, Enemy) {
+  'game/entities/Enemy',
+  'game/entities/Wall',
+], function(Crafty, _, Backbone, BaseScene, Player, Enemy, Map) {
   var Level01 = BaseScene.extend({
     defaults: {
       // This will be used later to name the scene and load it.
@@ -18,6 +20,13 @@ define([
         // Save references to these entities, they might be handy later.
         model.set({'player': new Player()});
         model.set({'enemy': new Enemy()});
+        model.set({'map': new Backbone.Collection()})
+        model.get('map').add([
+          new Map({x: 0, y: 0, tile: 'left'}),
+          new Map({x: 0, y: 128, tile: 'left'}),
+          new Map({x: 0, y: 256, tile: 'left'}),
+          new Map({x: 0, y: 384, tile: 'left'})
+        ]);
       });
       // This is mostly to call scene.uninit() on when BaseScene.destroy() is triggered.
       model.set({'scene': scene});
